@@ -14,8 +14,8 @@ import ReactTOPdf from "react-to-pdf";
 
 const Container = styled(animated.div)`
   display: inline-block;
-  padding: 3em;
-  background: #c7d2fe66;
+  padding: 1.5em;
+  background: #141e30;
   border-radius: 10px;
   z-index: 1;
   position: relative;
@@ -50,20 +50,20 @@ const Button = styled.button`
 const StyledImg = styled.img`
   width: 200px;
   height: auto;
-  border: 2px solid #000;
+  border: 2px solid #141e30;
   border-radius: 50%;
 `;
 
 const StyledH1 = styled.h1`
   line-heright: 1.5;
   letter-spacing: 1.5;
-  font-family: "Gilroy";
+  font-family: "Lato", sans-serif;
 `;
 
 const StyledH3 = styled.h3`
   line-heright: 1.5;
   letter-spacing: 1.15;
-  font-family: "Gilroy";
+  font-family: "Lato", sans-serif;
   font-size: 20px;
 `;
 const ref = React.createRef();
@@ -102,11 +102,9 @@ const GlassCard = () => {
       </SocialIcons>
       <br />
 
-      <div>
-        <ReactTOPdf targetRef={ref} filename="port.pdf">
-          {({ toPdf }) => <button onClick={toPdf}>Download My Resume</button>}
-        </ReactTOPdf>
-      </div>
+      <ReactTOPdf targetRef={ref} filename="port.pdf">
+        {({ toPdf }) => <button onClick={toPdf}>Download My Resume</button>}
+      </ReactTOPdf>
     </Container>
   );
 };
