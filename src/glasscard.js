@@ -1,4 +1,5 @@
 import React from "react";
+import { jsPDF } from "jspdf";
 import profile from "./images/profile.png";
 import styled from "styled-components";
 import { useSpring, animated, config } from "react-spring";
@@ -10,7 +11,7 @@ import {
   AiFillTwitterSquare,
 } from "react-icons/ai";
 import { DiCssdeck } from "react-icons/di";
-import ReactTOPdf from "react-to-pdf";
+import ReactToPdf from "react-to-pdf";
 
 const Container = styled(animated.div)`
   display: inline-block;
@@ -102,9 +103,9 @@ const GlassCard = () => {
       </SocialIcons>
       <br />
 
-      <ReactTOPdf targetRef={ref} filename="port.pdf">
+      <ReactToPdf targetRef={ref} filename="port.pdf">
         {({ toPdf }) => <button onClick={toPdf}>Download My Resume</button>}
-      </ReactTOPdf>
+      </ReactToPdf>
     </Container>
   );
 };
